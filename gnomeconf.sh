@@ -16,8 +16,6 @@ else
 fi
 
 # Exécution
-warning "Application des paramètres..."
-
 gsettings set org.gnome.mutter dynamic-workspaces $dynamicworkspace
 gsettings set org.gnome.desktop.wm.preferences num-workspaces $nbdesktop
 gsettings set org.gnome.desktop.screensaver lock-enabled $screenlock
@@ -32,6 +30,4 @@ if [[ $dist = ubuntu ]]; then
   gsettings set org.gnome.shell.extensions.dash-to-dock dock-position $position
   gsettings set org.gnome.shell.extensions.dash-to-dock extend-height $extend
 fi
-
-message "Paramètres activés"
-echo
+message "Configuration de Gnome effectuée"

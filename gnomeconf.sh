@@ -19,26 +19,19 @@ fi
 warning "Application des paramètres..."
 
 gsettings set org.gnome.mutter dynamic-workspaces $dynamicworkspace
-
 gsettings set org.gnome.desktop.wm.preferences num-workspaces $nbdesktop
-
 gsettings set org.gnome.desktop.screensaver lock-enabled $screenlock
-
 gsettings set org.gnome.desktop.session idle-delay $idledelay
-
 gsettings set org.gnome.desktop.interface color-scheme $colorscheme
-
 gsettings set org.gnome.desktop.interface icon-theme $icontheme
-
 gsettings set org.gnome.SessionManager logout-prompt $logoutprompt
-
 gsettings set org.gnome.desktop.peripherals.mouse natural-scroll $naturalscroll
-
 gsettings set org.gnome.nautilus.preferences default-folder-viewer $folderviewer
 
 if [[ $dist = ubuntu ]]; then
   gsettings set org.gnome.shell.extensions.dash-to-dock dock-position $position
   gsettings set org.gnome.shell.extensions.dash-to-dock extend-height $extend
+  gsettings set org.gnome.shell.extensions.dash-to-dock intelligent-autohide $intellhide
 fi
 
 message "Paramètres activés"

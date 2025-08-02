@@ -59,5 +59,11 @@ else
   gsettings set org.gnome.desktop.peripherals.mouse natural-scroll false
 fi
 
+if [[ $listview = true ]]; then
+  gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view'
+else
+  gsettings set org.gnome.nautilus.preferences default-folder-viewer 'icon-view'
+fi
+
 message "Paramètres activés"
 echo

@@ -6,7 +6,8 @@ message()  { echo -e "\033[0;32m====> $*\033[0m" ;}
 warning()  { echo ; echo -e "\033[0;33m====> $*\033[0m" ;}
 
 # Chargement du fichier de config
-cfg="$(dirname "$(realpath "$0")")/gnomeconf.cfg"
+dist=$(grep "^ID=" /etc/os-release | cut -d= -f2,2 | tr -d '"')
+cfg="$(dirname "$0")/config/$dist.cfg"
 if [[ ! -f $cfg ]]; then
   error "Fichier $cfg introuvable"
   exit 1

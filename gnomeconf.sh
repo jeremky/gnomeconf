@@ -44,8 +44,6 @@ fi
 
 if [[ $papicon = true ]]; then
   gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
-else
-  gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
 fi
 
 if [[ $alert = false ]]; then

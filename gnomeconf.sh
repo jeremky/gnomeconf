@@ -31,7 +31,6 @@ gsettings set org.gnome.nautilus.preferences default-folder-viewer $folderviewer
 if [[ $dist = ubuntu ]]; then
   gsettings set org.gnome.shell.extensions.dash-to-dock dock-position $position
   gsettings set org.gnome.shell.extensions.dash-to-dock extend-height $extend
-  gsettings set org.gnome.shell.extensions.dash-to-dock intelligent-autohide $intellhide
 fi
 
 message "Paramètres activés"

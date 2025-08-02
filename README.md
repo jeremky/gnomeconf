@@ -1,6 +1,6 @@
 # gnomeconf.sh
 
-Script automatisant le paramétrage de Gnome sur votre distribution préférée.
+Script automatisant la configuration de Gnome sur votre distribution préférée.
 
 ## Configuration
 

@@ -65,5 +65,9 @@ else
   gsettings set org.gnome.nautilus.preferences default-folder-viewer 'icon-view'
 fi
 
+if [[ $dist = ubuntu ]]; then
+  gsettings set org.gnome.shell.extensions.dash-to-dock dock-position "'"$position"'"
+fi
+
 message "Paramètres activés"
 echo

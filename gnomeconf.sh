@@ -18,55 +18,26 @@ fi
 # Exécution
 warning "Application des paramètres..."
 
-if [[ $dynamic = false ]]; then
-  gsettings set org.gnome.mutter dynamic-workspaces false
-  gsettings set org.gnome.desktop.wm.preferences num-workspaces $desktop
-else
-  gsettings set org.gnome.mutter dynamic-workspaces true
-fi
+gsettings set org.gnome.mutter dynamic-workspaces $dynamicworkspace
 
-if [[ $screenlock = true ]]; then
-  gsettings set org.gnome.desktop.screensaver lock-enabled true
-else
-  gsettings set org.gnome.desktop.screensaver lock-enabled false
-fi
+gsettings set org.gnome.desktop.wm.preferences num-workspaces $nbdesktop
 
-if [[ $screenidle = true ]]; then
-  gsettings set org.gnome.desktop.session idle-delay $idledelay
-else
-  gsettings set org.gnome.desktop.session idle-delay 0
-fi
+gsettings set org.gnome.desktop.screensaver lock-enabled $screenlock
 
-if [[ $darkmode = true ]]; then
-  gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-else
-  gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
-fi
+gsettings set org.gnome.desktop.session idle-delay $idledelay
 
-if [[ $papicon = true ]]; then
-  gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
-fi
+gsettings set org.gnome.desktop.interface color-scheme $colorscheme
 
-if [[ $alert = false ]]; then
-  gsettings set org.gnome.SessionManager logout-prompt false
-else
-  gsettings set org.gnome.SessionManager logout-prompt true
-fi
+gsettings set org.gnome.desktop.interface icon-theme $icontheme
 
-if [[ $mouse = natural ]]; then
-  gsettings set org.gnome.desktop.peripherals.mouse natural-scroll true
-else
-  gsettings set org.gnome.desktop.peripherals.mouse natural-scroll false
-fi
+gsettings set org.gnome.SessionManager logout-prompt $logoutprompt
 
-if [[ $listview = true ]]; then
-  gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view'
-else
-  gsettings set org.gnome.nautilus.preferences default-folder-viewer 'icon-view'
-fi
+gsettings set org.gnome.desktop.peripherals.mouse natural-scroll $naturalscroll
+
+gsettings set org.gnome.nautilus.preferences default-folder-viewer $folderviewer
 
 if [[ $dist = ubuntu ]]; then
-  gsettings set org.gnome.shell.extensions.dash-to-dock dock-position "'"$position"'"
+  gsettings set org.gnome.shell.extensions.dash-to-dock dock-position $position
   gsettings set org.gnome.shell.extensions.dash-to-dock extend-height $extend
 fi
 

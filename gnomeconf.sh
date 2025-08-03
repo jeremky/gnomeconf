@@ -30,6 +30,7 @@ if [[ $dist != bazzite ]]; then
   gsettings set org.gnome.shell.extensions.dash-to-dock extend-height $dockextend
   gsettings set org.gnome.shell.extensions.dash-to-dock apply-custom-theme $dockcustomtheme
   gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink $dockshrink
+  gsettings set org.gnome.shell.extensions.dash-to-dock running-indicator-style $dockindicator
   gsettings set org.gnome.shell.extensions.dash-to-dock scroll-action $dockscroll
   gsettings set org.gnome.shell.extensions.dash-to-dock disable-overview-on-startup $dockdisableview
   gsettings set org.gnome.shell.extensions.dash-to-dock click-action $dockclick

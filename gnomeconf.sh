@@ -25,13 +25,24 @@ gsettings set org.gnome.desktop.peripherals.mouse natural-scroll $naturalscroll
 gsettings set org.gnome.nautilus.preferences default-folder-viewer $folderviewer
 gsettings set org.gnome.desktop.interface color-scheme $colorscheme
 
-gsettings set org.gnome.shell.extensions.dash-to-dock apply-custom-theme $dockcustomtheme
-gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink $dockshrink
-gsettings set org.gnome.shell.extensions.dash-to-dock scroll-action $dockscroll
-gsettings set org.gnome.shell.extensions.dash-to-dock disable-overview-on-startup $disableview
+if [[ $dist != bazzite ]]; then
+  gsettings set org.gnome.shell.extensions.dash-to-dock apply-custom-theme $dockcustomtheme
+  gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink $dockshrink
+  gsettings set org.gnome.shell.extensions.dash-to-dock scroll-action $dockscroll
+  gsettings set org.gnome.shell.extensions.dash-to-dock disable-overview-on-startup $disableview
+fi
 
 if [[ $dist != ubuntu ]]; then
   gsettings set org.gnome.desktop.interface icon-theme $icontheme
   gsettings set org.gnome.shell.extensions.user-theme name $shelltheme
+fi
+
+if [[ $dist = fedora ]]; then
+  gsettings set org.gnome.shell.extensions.forge window-gap-size $forgegap
+  gsettings set org.gnome.shell.extensions.forge window-gap-size-increment $forgegap
+  gsettings set org.gnome.shell.extensions.forge stacked-tiling-mode-enabled $forgestack
+  gsettings set org.gnome.shell.extensions.forge tabbed-tiling-mode-enabled $forgetab
+  gsettings set org.gnome.shell.extensions.forge focus-border-toggle $forgeborder
+  gsettings set org.gnome.shell.extensions.forge dnd-center-layout $forgednd
 fi
 message "Configuration de Gnome effectuée"

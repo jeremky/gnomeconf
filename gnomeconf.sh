@@ -20,14 +20,18 @@ gsettings set org.gnome.mutter dynamic-workspaces $dynamicworkspace
 gsettings set org.gnome.desktop.wm.preferences num-workspaces $nbdesktop
 gsettings set org.gnome.desktop.screensaver lock-enabled $screenlock
 gsettings set org.gnome.desktop.session idle-delay $idledelay
-gsettings set org.gnome.desktop.interface color-scheme $colorscheme
-gsettings set org.gnome.desktop.interface icon-theme $icontheme
 gsettings set org.gnome.SessionManager logout-prompt $logoutprompt
 gsettings set org.gnome.desktop.peripherals.mouse natural-scroll $naturalscroll
 gsettings set org.gnome.nautilus.preferences default-folder-viewer $folderviewer
+gsettings set org.gnome.desktop.interface color-scheme $colorscheme
 
-if [[ $dist = ubuntu ]]; then
-  gsettings set org.gnome.shell.extensions.dash-to-dock dock-position $position
-  gsettings set org.gnome.shell.extensions.dash-to-dock extend-height $extend
+gsettings set org.gnome.shell.extensions.dash-to-dock apply-custom-theme $dockcustomtheme
+gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink $dockshrink
+gsettings set org.gnome.shell.extensions.dash-to-dock scroll-action $dockscroll
+gsettings set org.gnome.shell.extensions.dash-to-dock disable-overview-on-startup $disableview
+
+if [[ $dist != ubuntu ]]; then
+  gsettings set org.gnome.desktop.interface icon-theme $icontheme
+  gsettings set org.gnome.shell.extensions.user-theme name $shelltheme
 fi
 message "Configuration de Gnome effectuée"

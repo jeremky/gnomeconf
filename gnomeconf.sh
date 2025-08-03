@@ -24,6 +24,7 @@ gsettings set org.gnome.SessionManager logout-prompt $logoutprompt
 gsettings set org.gnome.desktop.peripherals.mouse natural-scroll $naturalscroll
 gsettings set org.gnome.nautilus.preferences default-folder-viewer $folderviewer
 gsettings set org.gnome.desktop.interface color-scheme $colorscheme
+gsettings set org.gnome.desktop.interface accent-color $color
 
 if [[ $dist != bazzite ]]; then
   gsettings set org.gnome.shell.extensions.dash-to-dock apply-custom-theme $dockcustomtheme
@@ -45,4 +46,5 @@ if [[ $dist = fedora ]]; then
   gsettings set org.gnome.shell.extensions.forge focus-border-toggle $forgeborder
   gsettings set org.gnome.shell.extensions.forge dnd-center-layout $forgednd
 fi
+
 message "Configuration de Gnome effectuée"

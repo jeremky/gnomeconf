@@ -24,7 +24,6 @@ gsettings set org.gnome.SessionManager logout-prompt $logoutprompt
 gsettings set org.gnome.desktop.peripherals.mouse natural-scroll $naturalscroll
 gsettings set org.gnome.nautilus.preferences default-folder-viewer $folderviewer
 gsettings set org.gnome.desktop.interface color-scheme $colorscheme
-gsettings set org.gnome.desktop.interface accent-color $color
 
 if [[ $dist != bazzite ]]; then
   gsettings set org.gnome.shell.extensions.dash-to-dock dock-position $dockposition
@@ -32,10 +31,12 @@ if [[ $dist != bazzite ]]; then
   gsettings set org.gnome.shell.extensions.dash-to-dock apply-custom-theme $dockcustomtheme
   gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink $dockshrink
   gsettings set org.gnome.shell.extensions.dash-to-dock scroll-action $dockscroll
-  gsettings set org.gnome.shell.extensions.dash-to-dock disable-overview-on-startup $disableview
+  gsettings set org.gnome.shell.extensions.dash-to-dock disable-overview-on-startup $dockdisableview
+  gsettings set org.gnome.shell.extensions.dash-to-dock click-action $dockclick
 fi
 
 if [[ $dist != ubuntu ]]; then
+  gsettings set org.gnome.desktop.interface accent-color $color
   gsettings set org.gnome.desktop.interface icon-theme $icontheme
   gsettings set org.gnome.shell.extensions.user-theme name $shelltheme
 fi

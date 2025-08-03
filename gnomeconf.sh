@@ -27,6 +27,8 @@ gsettings set org.gnome.desktop.interface color-scheme $colorscheme
 gsettings set org.gnome.desktop.interface accent-color $color
 
 if [[ $dist != bazzite ]]; then
+  gsettings set org.gnome.shell.extensions.dash-to-dock dock-position $dockposition
+  gsettings set org.gnome.shell.extensions.dash-to-dock extend-height $dockextend
   gsettings set org.gnome.shell.extensions.dash-to-dock apply-custom-theme $dockcustomtheme
   gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink $dockshrink
   gsettings set org.gnome.shell.extensions.dash-to-dock scroll-action $dockscroll

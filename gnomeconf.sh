@@ -37,6 +37,7 @@ if [[ $dist != bazzite ]]; then
 fi
 
 if [[ $dist != ubuntu ]]; then
+  gsettings set org.gnome.desktop.wm.preferences button-layout $buttonlayout
   gsettings set org.gnome.desktop.interface accent-color $color
   gsettings set org.gnome.desktop.interface icon-theme $icontheme
   gsettings set org.gnome.shell.extensions.user-theme name $shelltheme

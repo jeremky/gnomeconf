@@ -34,6 +34,7 @@ if [[ $dist != bazzite ]]; then
   gsettings set org.gnome.shell.extensions.dash-to-dock scroll-action $dockscroll
   gsettings set org.gnome.shell.extensions.dash-to-dock disable-overview-on-startup $dockdisableview
   gsettings set org.gnome.shell.extensions.dash-to-dock click-action $dockclick
+  gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed $dockfixed
 fi
 
 if [[ $dist != ubuntu ]]; then

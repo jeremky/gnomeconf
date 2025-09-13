@@ -16,8 +16,6 @@ else
 fi
 
 # Exécution
-gsettings set org.gnome.mutter dynamic-workspaces $dynamicworkspace
-gsettings set org.gnome.desktop.wm.preferences num-workspaces $nbdesktop
 gsettings set org.gnome.desktop.screensaver lock-enabled $screenlock
 gsettings set org.gnome.desktop.session idle-delay $idledelay
 gsettings set org.gnome.SessionManager logout-prompt $logoutprompt
@@ -38,10 +36,11 @@ if [[ $dist != bazzite ]]; then
 fi
 
 if [[ $dist != ubuntu ]]; then
+  gsettings set org.gnome.mutter dynamic-workspaces $dynamicworkspace
+  gsettings set org.gnome.desktop.wm.preferences num-workspaces $nbdesktop
   gsettings set org.gnome.desktop.wm.preferences button-layout $buttonlayout
   gsettings set org.gnome.desktop.interface accent-color $color
   gsettings set org.gnome.desktop.interface icon-theme $icontheme
-  gsettings set org.gnome.shell.extensions.user-theme name $shelltheme
 fi
 
 if [[ $dist = fedora ]]; then
